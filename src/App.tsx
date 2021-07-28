@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import DificultySelector from './components/DificultySelector/DificultySelector';
+import Rules from './components/Rules';
+
+const difNames:string[] = ['Easy', 'Normal', 'Hard'];
 
 function App() {
+
+  const [dificulty, setDificulty] = useState<number>(1);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-col text-3xl">
+      <div className="bg-yellow-400 h-screen flex flex-col items-center justify-center">
+        <h1 className="text-9xl text-white ">Card Memory game</h1>
+        <DificultySelector 
+          setDificulty={setDificulty}
+          dificulty={dificulty}
+          text={difNames[dificulty]}
+        />
+        <Rules dificulty={dificulty}/>
+      </div>
+
+      <div className="h-screen flex justify-center">
+          <button className="p-4 h-16 text-4xl bg-yellow-400">Start</button>
+          <p className="self-end text-7xl">Lives</p>
+      </div>
     </div>
   );
 }

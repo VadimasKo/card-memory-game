@@ -1,34 +1,24 @@
 import { useState } from "react";
 
 
-interface Props{
-    lives:number;
+interface Props {
+    lives: number;
 }
 
-function LivesBar({lives}:Props) {
+function LivesBar({ lives }: Props) {
 
-    let livesString:string = "☺ ☺ ☺"
-    let deathString:string = "☠ ☠ ☠"
-    
+    // let livesString: string = "☺ ☺ ☺"
+    // let deathString: string = "☠ ☠ ☠"
+
     const [healthString, setHealthString] = useState("☺ ☺ ☺");
-
-
-    //Fix infinite relooop activate only on change!!!!
-    // switch(lives){
-    //     case 2:
-    //         setHealthString("☺ ☺ ☠");
-    //         break;
-    //     case 1:
-    //         setHealthString("☺ ☠ ☠");
-    //         break;
-    //     case 0:
-    //         setHealthString("☠ ☠ ☠");
-    //         break; 
-    // }
-
+    
+    if (lives === 3 && healthString !== "☺ ☺ ☺") setHealthString("☺ ☺ ☺");
+    else if (lives === 2 && healthString !== "☺ ☺ ☠") setHealthString("☺ ☺ ☠");
+    else if (lives === 1 && healthString !== "☺ ☠ ☠") setHealthString("☺ ☠ ☠");
+    else if (lives === 0 && healthString !== "☠ ☠ ☠") setHealthString("☠ ☠ ☠");
 
     return (
-        <div className="flex justify-center self-end w-full text-6xl">
+        <div className="flex justify-center justify-self-end w-full text-6xl">
             <p>{healthString}</p>
         </div>
     )

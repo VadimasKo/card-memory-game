@@ -1,5 +1,5 @@
 # Card Memory Game
-
+  A browser game made with React, TypeScript and Tailwind for css 
 ## Instalation and launch
  * yarn
  * yarn run start

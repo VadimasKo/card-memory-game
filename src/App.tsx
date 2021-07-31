@@ -9,7 +9,7 @@ function App() {
   const [dificulty, setDificulty] = useState(1); // 0 -easy, 1-normal, 2 hard
 
   let numCards:number = calcNumberCards(dificulty);
-  let time:number = 4 - dificulty;
+  let time:number = 5 - dificulty;
 
   return (
     <div>

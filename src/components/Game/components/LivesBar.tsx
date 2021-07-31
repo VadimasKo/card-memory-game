@@ -13,7 +13,7 @@ function LivesBar({ lives }: Props) {       /// why does LivesBar(lives:number) 
     else if (lives === 0 && healthString !== "☠ ☠ ☠") setHealthString("☠ ☠ ☠");
 
     return (
-        <div className="flex justify-center justify-self-end w-full text-6xl">
+        <div className=" flex justify-center w-full text-7xl">
             <p>{healthString}</p>
         </div>
     )

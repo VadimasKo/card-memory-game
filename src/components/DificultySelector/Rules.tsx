@@ -11,7 +11,7 @@ function Rules({ numCards,time}:Props){
     return(
         <ul className="flex flex-col items-center mt-12 text-3xl">
             <li>you have <span className={spanStyle}>3 lives</span></li>
-            <li>there are <span className={spanStyle}>{numPairs} pairs</span> pairs of cards</li>
+            <li>there are <span className={spanStyle}>{numPairs} pairs</span> of cards</li>
             <li>you have <span className={spanStyle}>{time}sec</span>  to memorise pairs of cards</li>
         </ul>
     )
